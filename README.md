@@ -1,4 +1,4 @@
-# random-stuff
+# Random Stuff
 Just some scripts or snippets for various things
 
 ### Contains:
