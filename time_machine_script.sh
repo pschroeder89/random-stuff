@@ -45,6 +45,7 @@ case ${INTERVAL} in
 *)
   echo "No INTERVAL env var supplied, defaulting to a week"
   time_to_add=${WEEK}
+  ;;
 esac
 
 checkout_and_run() {
