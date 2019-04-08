@@ -50,7 +50,7 @@ checkout_and_run() {
     if [[ ${time_to_check} -le ${time_now} ]]; then
         find .  -mindepth 1 -maxdepth 1 -not -name '.git' -exec rm -rf {} + # Delete the repo except .git folder, so each checkout has a clean slate
         git checkout -f $(git rev-list -n 1 --before=${time_to_check} origin/master) 2> /dev/null # get the commit previous to the checkout date and check it out
-        git archive HEAD time_machine_script.sh | tar -x
+        git archive origin/HEAD time_machine_script.sh | tar -x
         ${COMMAND} # run your command on the current state of the repo
 
         time_to_check=$((${time_to_check} + ${time_to_add})) # add the supplied interval to the time to check of the next run
