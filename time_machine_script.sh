@@ -30,7 +30,7 @@ YEAR=31557600
 
 case ${INTERVAL} in
 'minute')
-  time_to_add=${DAY}
+  time_to_add=${MINUTE}
   ;;
 'day')
   time_to_add=${DAY}
