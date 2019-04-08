@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # USAGE: Run this script to get historical data from a repo. It traverses through a git repo's state at a set interval
-# and runs your script on that date's master branch version
+# and runs your script at each interval's master branch version
 # Put this script in the root of your repo and run it in terminal via: `COMMAND=path/to/command INTERVAL=week sh time_machine_script.sh`
 
 # MAC ONLY: THIS SCRIPT WON"T WORK IN LINUX DUE TO DATE COMMANDS, FEEL FREE TO ADD LINUX CONDITIONALS
@@ -23,6 +23,7 @@ time_to_check=$(git log origin/master --pretty=format:'%at' | tail -1)
 echo "Determining current epoch time"
 time_now=$(date +%s)
 
+# number of seconds
 MINUTE=60
 DAY=86400
 WEEK=604800
