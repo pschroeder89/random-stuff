@@ -44,7 +44,7 @@ esac
 
 checkout_and_run() {
     if [[ ${time_to_check} -le ${time_now} ]]; then
-        find . ! -name 'time_machine_script.sh' -type f -exec rm -f {} + # Delete the repo except this script, so each checkout has a clean slate
+        find .  -mindepth 1 -maxdepth 1 -not -name '.git' ! -name 'time_machine_script.sh' -exec rm -rf {} + # Delete the repo except this script and .git folder, so each checkout has a clean slate
         git_result=$(git checkout -f $(git rev-list -n 1 --before=${time_to_check} origin/master) 2> /dev/null) # get the commit previous to the checkout date and check it out
         if [[ ${git_result} != *"warning:"* ]]; then # warning indicates git log for master didn't yet exist at current time, so skip running your command
             ${COMMAND} # run your command on the current state of the repo
