@@ -19,6 +19,7 @@ Just some scripts or snippets for various things
 ```
         Determining first commit epoch time
         Determining current epoch time
+        Running command: wc -c README.md
               64 README.md
               64 README.md
               64 README.md
@@ -27,4 +28,7 @@ Just some scripts or snippets for various things
              174 README.md
              174 README.md
              174 README.md
+             641 README.md
+             845 README.md
+
 ```
