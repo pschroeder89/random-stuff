@@ -23,11 +23,15 @@ time_to_check=$(git log origin/master --pretty=format:'%at' | tail -1)
 echo "Determining current epoch time"
 time_now=$(date +%s)
 
+MINUTE=60
 DAY=86400
 WEEK=604800
 YEAR=31557600
 
 case ${INTERVAL} in
+'minute')
+  time_to_add=${DAY}
+  ;;
 'day')
   time_to_add=${DAY}
   ;;
