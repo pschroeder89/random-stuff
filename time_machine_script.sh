@@ -55,8 +55,6 @@ checkout_and_run() {
 
         time_to_check=$((${time_to_check} + ${time_to_add})) # add the supplied interval to the time to check of the next run
         checkout_and_run # run again with the new time_to_check env var
-    else
-
     fi
 }
 
