@@ -6,6 +6,14 @@
 
 # MAC ONLY: THIS SCRIPT WON"T WORK IN LINUX DUE TO DATE COMMANDS, FEEL FREE TO ADD LINUX CONDITIONALS
 
+if [[ -z $COMMAND ]];then
+    echo "No COMMAND env var supplied, exiting intentionally."
+    echo "Example: COMMAND=path/to/command INTERVAL=week sh time_machine_script.sh"
+    echo "or"
+    echo "COMMAND='echo hi' INTERVAL=week sh time_machine_script.sh"
+    exit 1
+fi
+
 echo "Checking out master latest"
 git pull
 git checkout master
