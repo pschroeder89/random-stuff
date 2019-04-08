@@ -59,5 +59,5 @@ checkout_and_run() {
 }
 
 checkout_and_run
-git checkout master
+git checkout -f master
 git reset --hard # Blow away anything that doesn't exist in latest master
